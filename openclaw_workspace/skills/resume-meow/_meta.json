@@ -1,0 +1,9 @@
+{
+  "name": "resume-meow",
+  "displayName": "简历喵",
+  "description": "面向求职者的简历优化、岗位匹配和求职材料生成能力包。",
+  "version": "0.1.0",
+  "author": "OpenClaw workspace",
+  "type": "text-document",
+  "tags": ["resume", "job-search", "career", "markdown", "hr-message"]
+}
