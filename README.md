@@ -45,6 +45,37 @@ openclaw-resume-meow-template/
 | `platform/` | 平台上架所需的 profile 公开展示信息和 cron 消息参考 |
 | `docs/` | 项目状态文档，便于复现时了解当前进度 |
 
+## 复现前环境检查
+
+在平台分配的云电脑中 clone 本仓库后，建议先运行环境检查脚本：
+
+```bash
+cd ~/openclaw-resume-meow-template
+bash scripts/00_check_env.sh
+```
+
+该脚本会检查：
+
+1. 当前云电脑是否存在 `openclaw` 命令；
+2. `~/.openclaw/workspace` 是否存在；
+3. `~/.openclaw/workspace/skills` 是否存在；
+4. 仓库内的 `IDENTITY.md`、`resume-meow` skill、profile 示例和 cron message 是否完整；
+5. 仓库中是否存在明显不应提交的运行态文件或敏感文件。
+
+看到以下结果，说明可以继续安装：
+
+```text
+PASS: template files are complete
+PASS: no obvious sensitive runtime files found
+```
+
+环境检查通过后，再执行安装脚本：
+
+```bash
+bash scripts/01_install_workspace_files.sh
+```
+
+
 ## 快速复现流程（云电脑路线）
 
 ```bash
