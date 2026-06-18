@@ -86,3 +86,45 @@ cp -r openclaw_workspace/skills/resume-meow ~/.openclaw/workspace/skills/
 - [ ] 增加复现检查脚本（验证文件完整性）
 - [ ] 增加更多功能型龙虾模板
 - [ ] 增加平台上架 checklist
+
+## 使用安装脚本复现到 OpenClaw workspace
+
+在平台分配的云电脑中，克隆本仓库后，可使用安装脚本将「简历喵」模板文件布置到当前 OpenClaw workspace。
+
+```bash
+cd ~/openclaw-resume-meow-template
+bash scripts/01_install_workspace_files.sh
+```
+
+命令说明：
+
+* `cd ~/openclaw-resume-meow-template`：进入本仓库目录；
+* `bash scripts/01_install_workspace_files.sh`：执行安装脚本，将模板中的 `IDENTITY.md` 和 `resume-meow` skill 复制到 `~/.openclaw/workspace`。
+
+脚本会执行以下操作：
+
+1. 检查模板文件是否存在；
+2. 检查目标 OpenClaw workspace；
+3. 如已有 `IDENTITY.md`，先自动备份；
+4. 如已有 `skills/resume-meow`，先自动备份；
+5. 复制新的 `IDENTITY.md`；
+6. 复制 `resume-meow` skill；
+7. 输出下一步提示。
+
+安装完成后，请打开 OpenClaw Chat，并发送：
+
+```text
+请读取当前 workspace 根目录下的 IDENTITY.md，并将你的身份固定为「简历喵」。后续请优先使用 resume-meow skill 的规则工作。
+```
+
+随后进行本地能力测试，确认它能完成：
+
+* 简历诊断；
+* 项目经历优化；
+* 岗位 JD 匹配分析；
+* HR / BOSS 打招呼话术；
+* 风险提醒；
+* Markdown 文本输出。
+
+注意：该脚本只负责布置本地身份和 skill，不会注册雇佣平台 profile，不会配置 app_key / app_secret，不会创建 cron。
+
